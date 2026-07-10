@@ -6,7 +6,7 @@
 	import PokemonImage from './PokemonImage.svelte';
 	import FavoriteButton from './FavoriteButton.svelte';
 
-	const { pokemon }: { pokemon: Pokemon } = $props();
+	const { pokemon, priority = false }: { pokemon: Pokemon; priority?: boolean } = $props();
 
 	const artwork = $derived(
 		pokemon.sprites.other?.['official-artwork']?.front_default ?? pokemon.sprites.front_default
@@ -29,6 +29,7 @@
 		<PokemonImage
 			src={artwork}
 			alt={pokemon.name}
+			{priority}
 			class="h-full w-full object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110"
 		/>
 		<FavoriteButton name={pokemon.name} class="absolute top-2 right-2" />

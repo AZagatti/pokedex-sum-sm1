@@ -1,6 +1,10 @@
 <script lang="ts">
-	const { src, alt, class: className = '' }: { src: string | null; alt: string; class?: string } =
-		$props();
+	const {
+		src,
+		alt,
+		class: className = '',
+		priority = false
+	}: { src: string | null; alt: string; class?: string; priority?: boolean } = $props();
 
 	let errored = $state(false);
 </script>
@@ -9,8 +13,9 @@
 	<img
 		{src}
 		{alt}
-		loading="lazy"
+		loading={priority ? 'eager' : 'lazy'}
 		decoding="async"
+		fetchpriority={priority ? 'high' : 'auto'}
 		class={className}
 		onerror={() => (errored = true)}
 	/>

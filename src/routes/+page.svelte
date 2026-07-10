@@ -408,8 +408,8 @@
 		</div>
 	{:else}
 		<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-			{#each visiblePokemon as pokemon (pokemon.name)}
-				<PokemonCard {pokemon} />
+			{#each visiblePokemon as pokemon, i (pokemon.name)}
+				<PokemonCard {pokemon} priority={i < 5} />
 			{/each}
 			{#if loadingVisible}
 				{#each Array(Math.min(PAGE_SIZE, orderedNames.length - visiblePokemon.length)) as _, i (i)}
