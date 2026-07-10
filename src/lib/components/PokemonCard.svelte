@@ -8,9 +8,12 @@
 
 	const { pokemon, priority = false }: { pokemon: Pokemon; priority?: boolean } = $props();
 
-	const artwork = $derived(
-		pokemon.sprites.other?.['official-artwork']?.front_default ?? pokemon.sprites.front_default
-	);
+	// The card grid renders up to dozens of sprites at once, so it uses the
+	// small default sprite (~1-2 KB) rather than the official artwork
+	// (~150-200 KB each) used on the detail page — loading 30 full-res
+	// artwork images on the list page was the single biggest contributor to
+	// a slow Largest Contentful Paint.
+	const sprite = $derived(pokemon.sprites.front_default ?? pokemon.sprites.front_shiny);
 	const primaryType = $derived(pokemon.types[0]?.type.name ?? 'normal');
 </script>
 
@@ -27,10 +30,10 @@
 		)} 20%, transparent), transparent)"
 	>
 		<PokemonImage
-			src={artwork}
+			src={sprite}
 			alt={pokemon.name}
 			{priority}
-			class="h-full w-full object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110"
+			class="h-full w-full object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110 [image-rendering:pixelated]"
 		/>
 		<FavoriteButton name={pokemon.name} class="absolute top-2 right-2" />
 		<span
