@@ -4,7 +4,7 @@
 
 [**🔴 Live demo →**](https://azagatti.github.io/pokedex-sum-sm1/)
 
-[![CI](https://github.com/AZagatti/pokedex-sum-sm1/actions/workflows/ci.yml/badge.svg)](https://github.com/AZagatti/pokedex-sum-sm1/actions/workflows/ci.yml) ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?logo=svelte&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white) ![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss&logoColor=white) ![Zod](https://img.shields.io/badge/Zod-validated-3E67B1?logo=zod&logoColor=white) ![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed_on-GitHub_Pages-222?logo=github)
+[![CI](https://github.com/AZagatti/pokedex-sum-sm1/actions/workflows/ci.yml/badge.svg)](https://github.com/AZagatti/pokedex-sum-sm1/actions/workflows/ci.yml) ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?logo=svelte&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white) ![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss&logoColor=white) ![Zod](https://img.shields.io/badge/Zod-validated-3E67B1?logo=zod&logoColor=white) ![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed_on-GitHub_Pages-222?logo=github) ![Lighthouse 100](https://img.shields.io/badge/Lighthouse-100%2F100%2F100%2F100-brightgreen?logo=lighthouse)
 
 ---
 
