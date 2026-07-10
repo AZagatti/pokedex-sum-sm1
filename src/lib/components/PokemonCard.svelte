@@ -40,9 +40,9 @@
 		</span>
 	</div>
 	<div class="flex flex-1 flex-col gap-2 p-4">
-		<h3 class="truncate text-base font-bold text-slate-900 dark:text-white">
+		<h2 class="truncate text-base font-bold text-slate-900 dark:text-white">
 			{formatName(pokemon.name)}
-		</h3>
+		</h2>
 		<div class="flex flex-wrap gap-1.5">
 			{#each pokemon.types as t (t.slot)}
 				<TypeBadge type={t.type.name} />

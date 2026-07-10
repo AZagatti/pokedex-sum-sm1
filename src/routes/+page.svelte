@@ -4,7 +4,7 @@
 	import { getMasterPokemonIndex, getGenerationNames, getTypeNames } from '$lib/api';
 	import { getPokemon } from '$lib/api/client';
 	import type { Pokemon } from '$lib/api/schemas';
-	import { ALL_TYPES, formatName, typeColor } from '$lib/utils/pokemon';
+	import { ALL_TYPES, formatName, typeColor, typeBadgeColor } from '$lib/utils/pokemon';
 	import { mapWithConcurrency } from '$lib/utils/concurrency';
 	import PokemonCard from '$lib/components/PokemonCard.svelte';
 	import CardSkeleton from '$lib/components/CardSkeleton.svelte';
@@ -346,7 +346,9 @@
 							<button
 								type="button"
 								onclick={() => toggleType(type)}
-								style:background-color={selectedTypes.includes(type) ? typeColor(type) : undefined}
+								style:background-color={selectedTypes.includes(type)
+								? typeBadgeColor(type)
+								: undefined}
 								class="focus-ring rounded-full border px-3 py-1.5 text-sm font-medium transition-colors {selectedTypes.includes(
 									type
 								)

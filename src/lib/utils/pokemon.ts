@@ -27,6 +27,37 @@ export function typeColor(type: string): string {
   return TYPE_COLORS[type] ?? "#68A090";
 }
 
+// Darkened variants of TYPE_COLORS used wherever the color sits behind white
+// text (type badges). The base palette is the canonical Pokémon type color
+// and reads well as a gradient/accent, but several of them (grass, fire,
+// flying, water, ...) fall below WCAG AA's 4.5:1 contrast ratio against
+// white at badge text size. These preserve the same hue at a contrast-safe
+// lightness instead of introducing an unrelated color.
+export const TYPE_BADGE_COLORS: Record<string, string> = {
+  bug: "#6B7712",
+  dark: "#4A3A2F",
+  dragon: "#5426D6",
+  electric: "#93690A",
+  fairy: "#A84E77",
+  fighting: "#9B2520",
+  fire: "#A6540F",
+  flying: "#5C4DAE",
+  ghost: "#4E3966",
+  grass: "#3F7523",
+  ground: "#8C6E1E",
+  ice: "#347A76",
+  normal: "#7A785A",
+  poison: "#7B2E79",
+  psychic: "#C22156",
+  rock: "#7C6C1E",
+  steel: "#5C5C74",
+  water: "#3A5FB8",
+};
+
+export function typeBadgeColor(type: string): string {
+  return TYPE_BADGE_COLORS[type] ?? "#4A5A52";
+}
+
 export const STAT_LABELS: Record<string, string> = {
   attack: "Attack",
   defense: "Defense",

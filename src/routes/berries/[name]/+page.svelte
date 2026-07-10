@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { ArrowLeft } from 'lucide-svelte';
-	import { formatName, typeColor } from '$lib/utils/pokemon';
+	import { formatName, typeColor, typeBadgeColor } from '$lib/utils/pokemon';
 	import PokemonImage from '$lib/components/PokemonImage.svelte';
 	import type { PageProps } from './$types';
 
@@ -87,7 +87,7 @@
 				<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
 					<span
 						class="rounded-full px-2.5 py-1 text-xs font-semibold text-white"
-						style:background-color={typeColor(berry.natural_gift_type.name)}
+						style:background-color={typeBadgeColor(berry.natural_gift_type.name)}
 					>
 						{formatName(berry.natural_gift_type.name)}
 					</span>
